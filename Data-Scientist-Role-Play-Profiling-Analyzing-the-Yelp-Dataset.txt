@@ -1,57 +1,86 @@
+Data Scientist Role Play Profiling Analyzing the Yelp Dataset
+
+
+This is a 2-part assignment. In the first part, you are asked a series of questions that will help you profile and understand the data just like a data scientist would. For this first part of the assignment, you will be assessed both on the correctness of your findings, as well as the code you used to arrive at your answer. You will be graded on how easy your code is to read, so remember to use proper formatting and comments where necessary.
+
+In the second part of the assignment, you are asked to come up with your own inferences and analysis of the data for a particular question you want to answer. You will be required to prepare the dataset for the analysis you choose to do. As with the first part, you will be graded, in part, on how easy your code is to read, so use proper formatting and comments to illustrate your intent as required.
+
+For both parts of this assignment, use the following "worksheet." It provides all the questions you are being asked, and your job will be to transfer your answers and SQL coding into this worksheet where indicated so that your peers can review your work. You should be able to use any Text Editor (Windows Notepad, Apple TextEdit, Notepad ++, Sublime Text, etc.) to copy and paste your answers.
+
+
+
 Part 1: Yelp Dataset Profiling and Understanding
 
 1. Profile the data by finding the total number of records for each of the tables below:
 
-	
 i. Attribute table = 10000
+SELECT COUNT(*) AS Attribute_Records_Number
+FROM Attribute
 
 ii. Business table = 10000
+SELECT COUNT(*) AS Business_Records_Number
+FROM business
+
 
 iii. Category table = 10000
-
+SELECT COUNT(*) AS Category_Records_Number
+FROM category
+ 
 iv. Checkin table = 10000
+SELECT COUNT(*) AS Checkin_Records_Number
+FROM checkin 
 
 v. elite_years table = 10000
+SELECT COUNT(*) AS elite_years_Records_Number
+FROM elite_years 
 
 vi. friend table = 10000 
+SELECT COUNT(*) AS Friend_Records_Number
+FROM friend 
 
 vii. hours table = 10000
+SELECT COUNT(*) AS Hours_Records_Number
+FROM hours  
 
 viii. photo table = 10000
-
+SELECT COUNT(*) AS Photo_Records_Number
+FROM photo  
+ 
 ix. review table = 10000
+SELECT COUNT(*) AS Review_Records_Number
+FROM review   
 
 x. tip table = 10000
+SELECT COUNT(*) AS Tip_Records_Number
+FROM tip   
 
 xi. user table = 10000
+SELECT COUNT(*) AS User_Records_Number
+FROM user  
 
 
 2. Find the total distinct records by either the foreign key or primary key for each table. If two foreign keys are listed in the table, please specify which foreign key.
 
-
 i. Business = 10000 
+
 -- Using id as primary key
 SELECT COUNT(DISTINCT(id)) AS Business_Distinct_Records
 FROM business  
-
 
 ii. Hours = 1562
 -- Using business_id as foreign key
 SELECT COUNT(DISTINCT(business_id)) AS Hours_Distinct_Records
 FROM Hours
 
-
 iii. Category = 2643
 -- Using business_id as foreign key
 SELECT COUNT(DISTINCT(business_id)) AS Category_Distinct_Records
 FROM Category
 
-
 iv. Attribute = 1115
 -- Using business_id as foreign key
 SELECT COUNT(DISTINCT(business_id)) AS Attribute_Distinct_Records
 FROM Attribute 
-
 
 v. Review = 10000
 -- Using id as a primary key
@@ -63,24 +92,20 @@ vi. Checkin = 493
 SELECT COUNT(DISTINCT(business_id)) AS Checkin_Distinct_Records
 FROM Checkin
 
-
 vii. Photo = 10000
 -- Using business_id as foreign key
 SELECT COUNT(DISTINCT(id)) AS Photo_Distinct_Records
 FROM Photo 
-
 
 viii. Tip = 537
 -- Using user_id as foreign key
 SELECT COUNT(DISTINCT(user_id)) AS Tip_Distinct_Records
 FROM Tip
 
-
 ix. User = 10000
 -- Using id as primary key
 SELECT COUNT(DISTINCT(id)) AS User_Distinct_Records
 FROM User
-
 
 x. Friend = 11
 -- Using user_id as foreign key
